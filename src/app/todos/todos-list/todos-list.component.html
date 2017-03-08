@@ -1,0 +1,11 @@
+<div class="row">
+  <div class="col-xs-12">
+    <ul class="list-group">
+      <td-app-todos-list-item 
+        *ngFor="let todo of todos; let i = index" 
+        [todo]="todo" 
+        [todoId]="i">
+      </td-app-todos-list-item>
+    </ul>
+  </div>
+</div>

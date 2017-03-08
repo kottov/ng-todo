@@ -1,0 +1,6 @@
+<a [routerLink]="[todoId]" class="list-group-item clearfix" *ngIf="!todo.isDone">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{todo.name}}</h4>
+    <p class="list-group-item-text">{{todo.description}}</p>
+  </div>
+</a>

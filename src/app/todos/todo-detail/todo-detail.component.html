@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{selectedTodo.name}}</h1>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <p>{{selectedTodo.description}}</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-success" (click)="onComplete()">Complete</button>
+    <button class="btn btn-danger" (click)="onEdit()">Edit</button>
+  </div>
+</div>

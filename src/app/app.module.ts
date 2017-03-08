@@ -1,20 +1,41 @@
+import { TodosService } from './todos/todos.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { routing } from './app.routing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header.component';
+import { DropdownDirective } from './dropdown.directive';
+import { TodosComponent } from './todos/todos.component';
+import { TodosListComponent } from './todos/todos-list/todos-list.component';
+import { TodosListItemComponent } from './todos/todos-list/todos-list-item.component';
+import { TodoDetailComponent } from './todos/todo-detail/todo-detail.component';
+import { TodosStartComponent } from './todos/todos-start.component';
+import { TodoEditComponent } from './todos/todo-edit/todo-edit.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    DropdownDirective,
+    TodosComponent,
+    TodosListComponent,
+    TodosListItemComponent,
+    TodosListItemComponent,
+    TodoDetailComponent,
+    TodosStartComponent,
+    TodoEditComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    ReactiveFormsModule,
+    HttpModule,
+    routing
   ],
-  providers: [],
+  providers: [TodosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
