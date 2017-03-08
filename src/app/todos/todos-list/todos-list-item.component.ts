@@ -4,8 +4,7 @@ import { Todo } from '../todo';
 
 @Component({
   selector: 'td-app-todos-list-item',
-  templateUrl: './todos-list-item.component.html',
-  styles: []
+  templateUrl: './todos-list-item.component.html'
 })
 export class TodosListItemComponent implements OnInit {
   @Input() todo: Todo;

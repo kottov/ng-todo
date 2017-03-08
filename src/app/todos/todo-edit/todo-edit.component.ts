@@ -8,8 +8,7 @@ import { Todo } from '../todo';
 
 @Component({
   selector: 'td-app-todo-edit',
-  templateUrl: './todo-edit.component.html',
-  styleUrls: ['./todo-edit.component.css']
+  templateUrl: './todo-edit.component.html'
 })
 export class TodoEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -48,7 +47,11 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   }
 
   navigateBack() {
-    this.router.navigate(['../']);
+    if (!this.isNew) {
+      this.router.navigate(['/todos', this.todoId]);
+    } else {
+      this.router.navigate(['../']);
+    }
   }
 
   onCancel() {

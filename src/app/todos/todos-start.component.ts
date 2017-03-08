@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <p>
       Please select or create the TODO!
     </p>
-  `,
-  styles: []
+  `
 })
 export class TodosStartComponent implements OnInit {
 

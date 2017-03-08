@@ -1,5 +1,6 @@
+import { EventEmitter, Injectable } from '@angular/core';
+
 import { Todo } from './todo';
-import { Injectable } from '@angular/core';
 
 @Injectable()
 export class TodosService {
@@ -10,6 +11,8 @@ export class TodosService {
     new Todo('Todo 4', 'Choose tickets'),
     new Todo('Todo 5', 'Develop TODO app')
   ];
+  updated: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   getTodos(): Todo[] {
@@ -26,13 +29,16 @@ export class TodosService {
 
   completeTodo(id) {
     this.todos[id].isDone = true;
+    this.updated.emit();
   }
 
   addTodo(todo: Todo) {
     this.todos.push(todo);
+    this.updated.emit();
   }
 
   editTodo(oldTodo: Todo, newTodo: Todo) {
     this.todos[this.todos.indexOf(oldTodo)] = newTodo;
+    this.updated.emit();
   }
 }
