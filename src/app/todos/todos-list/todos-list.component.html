@@ -1,10 +1,14 @@
 <div class="row">
   <div class="col-xs-12">
+    <input type="text" #filter (keyup)="filterInputElem = filter">
+    <button (click)="clearFilter()">Clear</button>
     <ul class="list-group">
       <td-app-todos-list-item 
-        *ngFor="let todo of todos; let i = index" 
+        *ngFor="let todo of todos | todosListFilter:filter.value; let i = index" 
         [todo]="todo" 
-        [todoId]="i">
+        [todoId]="todo.id"
+        [filter]="filter.value"
+        (onClicked)="clearFilter()">
       </td-app-todos-list-item>
     </ul>
   </div>

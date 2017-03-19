@@ -13,7 +13,7 @@ import { TodosService } from './../todos.service';
 export class TodoDetailComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   selectedTodo: Todo;
-  selectedTodoId: number;
+  selectedTodoId: string;
 
   constructor(private todosService: TodosService,
               private route: ActivatedRoute,

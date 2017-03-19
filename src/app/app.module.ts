@@ -14,6 +14,8 @@ import { TodosListItemComponent } from './todos/todos-list/todos-list-item.compo
 import { TodoDetailComponent } from './todos/todo-detail/todo-detail.component';
 import { TodosStartComponent } from './todos/todos-start.component';
 import { TodoEditComponent } from './todos/todo-edit/todo-edit.component';
+import { TodosListFilterPipe } from './todos/todos-list/todos-list-filter.pipe';
+import { TodosListHighlightPipe } from './todos/todos-list/todos-list-highlight.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { TodoEditComponent } from './todos/todo-edit/todo-edit.component';
     TodosListItemComponent,
     TodoDetailComponent,
     TodosStartComponent,
-    TodoEditComponent
+    TodoEditComponent,
+    TodosListFilterPipe,
+    TodosListHighlightPipe
   ],
   imports: [
     BrowserModule,

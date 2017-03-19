@@ -13,7 +13,8 @@ import { Todo } from '../todo';
 export class TodoEditComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   todo: Todo;
-  todoId: number;
+  todoId: string;
+  editedTodoId: string;
   isNew = true;
   todoForm: FormGroup;
 
@@ -37,7 +38,8 @@ export class TodoEditComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    const editedTodo = this.todoForm.value;
+    const editedTodo = new Todo(this.todoForm.value.name, this.todoForm.value.description, false);
+    this.editedTodoId = editedTodo.id;
     if (this.isNew) {
       this.todosService.addTodo(editedTodo);
     } else {
@@ -48,7 +50,7 @@ export class TodoEditComponent implements OnInit, OnDestroy {
 
   navigateBack() {
     if (!this.isNew) {
-      this.router.navigate(['/todos', this.todoId]);
+      this.router.navigate(['/todos', this.editedTodoId]);
     } else {
       this.router.navigate(['../']);
     }

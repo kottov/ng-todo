@@ -23,8 +23,9 @@ export class TodosService {
     return this.todos.filter((todo) => !todo.isDone);
   }
 
-  getTodo(id: number): Todo {
-    return this.todos[id];
+  getTodo(id: string): Todo {
+    const foundTodo = this.todos.find((todo) => todo.id === id);
+    return foundTodo;
   }
 
   completeTodo(id) {

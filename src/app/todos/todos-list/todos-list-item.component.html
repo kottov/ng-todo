@@ -1,6 +1,6 @@
-<a [routerLink]="[todoId]" class="list-group-item clearfix" *ngIf="!todo.isDone">
+<a [routerLink]="[todoId]" class="list-group-item clearfix" *ngIf="!todo.isDone" (click)="onClick()">
   <div class="pull-left">
-    <h4 class="list-group-item-heading">{{todo.name}}</h4>
-    <p class="list-group-item-text">{{todo.description}}</p>
+    <h4 class="list-group-item-heading" [innerHTML]="todo.name  | todosListHighlight : filter"></h4>
+    <p class="list-group-item-text" [innerHTML]="todo.description  | todosListHighlight : filter"></p>
   </div>
 </a>
